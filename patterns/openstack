@@ -2,3 +2,4 @@ OPENSTACK_REQUEST_ID req-[0-9a-f]*
 OPENSTACK_TIMESTAMP %{YEAR}-%{MONTHNUM}-%{MONTHDAY} %{TIME}
 OPENSTACK_PREFIX %{OPENSTACK_TIMESTAMP} (?<pid>\d+) (?<loglevel>\S+) (?<openstack.service>\S+)
 OPENSTACK_CONTEXT \[(?<openstack.context>(?<openstack.request_id>req-\S+) (?<openstack.user>[a-f0-9]+) (?<openstack.project>[a-f0-9]+) (?<openstack.domain>\S+) (?<openstack.user_domain>\S+) (?<openstack.project_domain>\S+))\]
+OPENSTACK_LOGLINE %{OPENSTACK_PREFIX} %{OPENSTACK_CONTEXT} %{GREEDYDATA:openstack.message}
