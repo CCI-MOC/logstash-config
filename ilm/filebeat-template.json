@@ -1,0 +1,9 @@
+{
+  "index_patterns": ["filebeat-*"],
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1,
+    "index.lifecycle.name": "moc_policy",
+    "index.lifecycle.rollover_alias": "filebeat"
+  }
+}
